@@ -2,10 +2,8 @@ from scene import Scene
 from scene_connections import SceneConn
 
 connect = SceneConn()
-print(connect.connections)
 room = Scene("room", "first room in the game")
 connect.add_connection("room", north="room_2")
-print(connect.connections)
 room_2 = Scene("room_2", "second room in the game")
 room_3 = Scene("room_3", "third room in the game")
 
@@ -15,6 +13,7 @@ def main():
     while True:
         command = input("Would you like to [q]uit or need some [h]elp?")
         if command == 'q':
+            print("Quitting game...")
             break
         if command == 'go to room_2':
             current_room = room_2
