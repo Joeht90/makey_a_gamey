@@ -1,9 +1,17 @@
+from scene import Scene
+
+
+room = Scene("room", "first room in the game")
+
 def main():
     print("Welcome to new game!")
     while True:
         command = input("Would you like to [q]uit or need some [h]elp?")
         if command == 'q':
             break
+        if command == 'c':
+            room.print_name()
+            return
         if command == 'h':
             print("this is where the help screen would appear, if I had one.")
         else:
