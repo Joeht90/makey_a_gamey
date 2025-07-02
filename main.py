@@ -1,7 +1,11 @@
 from scene import Scene
+from scene_connections import SceneConn
 
-
+connect = SceneConn()
+print(connect.connections)
 room = Scene("room", "first room in the game")
+connect.add_connection("room", north="room_2")
+print(connect.connections)
 room_2 = Scene("room_2", "second room in the game")
 room_3 = Scene("room_3", "third room in the game")
 
@@ -18,11 +22,14 @@ def main():
             continue
         if command == 'c':
             current_room.print_name()
-            return
+            continue
         if command == 'h':
             print("this is where the help screen would appear, if I had one.")
+        if command == 'north':
+            print(connect.connections[current_room.name]["north"])
+            continue
         else:
             print("that was not a valid option.")
 
 if __name__ == "__main__":
-    main()
+    main() 

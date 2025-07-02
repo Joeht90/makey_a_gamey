@@ -8,6 +8,3 @@ class Scene:
         print(self.name)
 
 
-
-
-
