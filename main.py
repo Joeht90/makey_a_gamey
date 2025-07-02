@@ -2,15 +2,22 @@ from scene import Scene
 
 
 room = Scene("room", "first room in the game")
+room_2 = Scene("room_2", "second room in the game")
+room_3 = Scene("room_3", "third room in the game")
 
 def main():
     print("Welcome to new game!")
+    current_room = room
     while True:
         command = input("Would you like to [q]uit or need some [h]elp?")
         if command == 'q':
             break
+        if command == 'go to room_2':
+            current_room = room_2
+            print("You are now in room 2.")
+            continue
         if command == 'c':
-            room.print_name()
+            current_room.print_name()
             return
         if command == 'h':
             print("this is where the help screen would appear, if I had one.")
