@@ -25,7 +25,8 @@ def main():
         if command == 'h':
             print("this is where the help screen would appear, if I had one.")
         if command == 'north':
-            print(connect.connections[current_room.name]["north"])
+            current_room = connect.move_room(current_room.name, "north")
+            print(current_room)
             continue
         else:
             print("that was not a valid option.")
