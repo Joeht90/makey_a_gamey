@@ -8,3 +8,5 @@ class SceneConn:
 
     def move_room(self, current_scene, direction):
         return self.connections[current_scene][direction]
+
+  
