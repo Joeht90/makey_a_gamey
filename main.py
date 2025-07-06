@@ -21,23 +21,26 @@ def main():
             # TODO: clean up the scenes.connect.move_room, that is a lot of code
             # we do not need but it works for now
             current_room = scenes.connect.move_room(current_room.name, "north")
-            print(current_room)
+            print(current_room.name)
             continue
         if  'south' in command:
             # TODO: clean up the scenes.connect.move_room, that is a lot of code
             # we do not need but it works for now
             current_room = scenes.connect.move_room(current_room.name, "south")
-            print(current_room)
+            print(current_room.name)
+            continue
         if  'west' in command:
             # TODO: clean up the scenes.connect.move_room, that is a lot of code
             # we do not need but it works for now
             current_room = scenes.connect.move_room(current_room.name, "west")
-            print(current_room)
+            print(current_room.name)
+            continue
         if  'east' in command:
             # TODO: clean up the scenes.connect.move_room, that is a lot of code
             # we do not need but it works for now
             current_room = scenes.connect.move_room(current_room.name, "east")
-            print(current_room)
+            print(current_room.name)
+            continue
         else:
             print("that was not a valid option.")
 

@@ -10,6 +10,6 @@ room_3 = Scene("room_3", "last room with chest")
 connect = SceneConn()
 
 # Create connections to all of the above scenes
-connect.add_connection(room_1.name, north=room_2.name)
-connect.add_connection(room_2.name, east=room_3.name, south=room_1.name)
-connect.add_connection(room_3.name, west=room_2.name)
+connect.add_connection(room_1.name, north=room_2)
+connect.add_connection(room_2.name, east=room_3, south=room_1)
+connect.add_connection(room_3.name, west=room_2)
