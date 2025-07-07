@@ -26,8 +26,9 @@ def main():
             continue
         if 'take' in command:
             item = command.split()
+            #TODO:your going to have to figure out how to get rid of vvvvvvvvv that second inventory.
+            player_1.inventory.add_item(item[-1], location.inventory.inventory[item[-1]])
             location.inventory.remove_item(item[-1])
-            # player_1.inventory.add_item(item[-1])
             continue
         if 'go' in command:
             direction = command.split()

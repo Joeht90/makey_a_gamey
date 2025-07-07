@@ -18,4 +18,4 @@ connect.add_connection(room_3.name, west=room_2)
 key = Item('key', 'key for opening chests and doors')
 
 # Add items to starting inventories
-room_2.inventory.add_item(key)
+room_2.inventory.add_item(key.name, key)
