@@ -1,6 +1,5 @@
-from scene import Scene 
+from game_object import Scene, Item 
 from scene_connections import SceneConn
-from item import Item
 
 # Create all the scenes you need for your game here
 room_1 = Scene("room_1", "starting room")
@@ -16,7 +15,7 @@ connect.add_connection(room_2.name, east=room_3, south=room_1)
 connect.add_connection(room_3.name, west=room_2)
 
 # Create items here
-key = Item('key')
+key = Item('key', 'key for opening chests and doors')
 
 # Add items to starting inventories
 room_2.inventory.add_item(key)

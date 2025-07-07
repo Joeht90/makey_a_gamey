@@ -16,6 +16,12 @@ class Scene(GameObject):
         self.inventory = Inventory()
 
 
-class Item:
+class Player(GameObject):
+    def __init__(self, name, description):
+        super().__init__(name, description)
+        self.inventory = Inventory()
+
+
+class Item(GameObject):
     def __init__(self, name, description):
         super().__init__(name, description)

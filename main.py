@@ -1,4 +1,4 @@
-from scene import Scene
+from game_object import Player
 from scene_connections import SceneConn
 from inventory import Inventory
 import scenes as s
@@ -7,6 +7,7 @@ scenes = s.connect
 def main():
     print("Welcome to new game!")
     location = s.room_1
+    player_1 = Player('player_1', 'Your character for the game.')
     while True:
         command = input("Would you like to [q]uit or need some [h]elp?")
         if command == 'q':
@@ -17,12 +18,16 @@ def main():
             continue
         if command == 'h':
             print("this is where the help screen would appear, if I had one.")
-        if command == 'i':
+        if command == 'li':
             location.inventory.check_inventory()
+            continue
+        if command == 'ci':
+            player_1.inventory.check_inventory()
             continue
         if 'take' in command:
             item = command.split()
             location.inventory.remove_item(item[-1])
+            # player_1.inventory.add_item(item[-1])
             continue
         if 'go' in command:
             direction = command.split()
