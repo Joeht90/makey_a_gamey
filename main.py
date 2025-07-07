@@ -1,5 +1,6 @@
 from scene import Scene
 from scene_connections import SceneConn
+from inventory import Inventory
 import scenes as s
 scenes = s.connect
 
@@ -16,6 +17,13 @@ def main():
             continue
         if command == 'h':
             print("this is where the help screen would appear, if I had one.")
+        if command == 'i':
+            location.inventory.check_inventory()
+            continue
+        if 'take' in command:
+            item = command.split()
+            location.inventory.remove_item(item[-1])
+            continue
         if 'go' in command:
             direction = command.split()
             try:
