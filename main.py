@@ -19,16 +19,15 @@ def main():
         if command == 'h':
             print("this is where the help screen would appear, if I had one.")
         if command == 'li':
-            location.inventory.check_inventory()
+            location.check_inventory()
             continue
         if command == 'ci':
-            player_1.inventory.check_inventory()
+            player_1.check_inventory()
             continue
         if 'take' in command:
             item = command.split()
-            #TODO:your going to have to figure out how to get rid of vvvvvvvvv that second inventory.
-            player_1.inventory.add_item(item[-1], location.inventory.inventory[item[-1]])
-            location.inventory.remove_item(item[-1])
+            player_1.add_item(item[-1], location.inventory[item[-1]])
+            location.remove_item(item[-1])
             continue
         if 'go' in command:
             direction = command.split()
@@ -45,4 +44,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
+    main()
