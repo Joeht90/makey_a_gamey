@@ -1,6 +1,5 @@
 from game_object import Player
 from scene_connections import SceneConn
-from inventory import Inventory
 import scenes as s
 scenes = s.connect
 
@@ -23,6 +22,12 @@ def main():
             continue
         if command == 'ci':
             player_1.check_inventory()
+            continue
+        if 'open' in command:
+            chest = command.split()
+            print(location.inventory['chest'].is_locked)
+            if 'key' in player_1.inventory: #and location.inventory[chest[-1]].is_locked == True:
+                print("eh")
             continue
         if 'take' in command:
             item = command.split()

@@ -1,4 +1,4 @@
-from game_object import Scene, Item 
+from game_object import Scene, Item, Container
 from scene_connections import SceneConn
 
 # Create all the scenes you need for your game here
@@ -17,5 +17,10 @@ connect.add_connection(room_3.name, west=room_2)
 # Create items here
 key = Item('key', 'key for opening chests and doors')
 
-# Add items to starting inventories
+# Add containers to game
+chest_1 = Container("chest", "A Locked Chest", True)
+
+# Add items, containers, and inventories to starting locations
 room_2.add_item(key.name, key)
+room_3.add_item(chest_1.name, chest_1)
+

@@ -1,11 +1,8 @@
-from inventory import Inventory
-
-
 class GameObject:
-    def __init__(self, name, description):
+    def __init__(self, name, description, inventory={}):
         self.name = name
         self.description = description
-        self.inventory = {}
+        self.inventory = inventory 
 
     def print_name(self):
         print(self.name)
@@ -32,4 +29,9 @@ class Player(GameObject):
 
 class Item(GameObject):
     def __init__(self, name, description):
-        super().__init__(name, description)
+        super().__init__(name, description, inventory=None)
+
+class Container(GameObject):
+    def __init__(self, name, description, is_locked):
+        super().__init__(name, description, inventory=None)
+        self.is_locked = is_locked
