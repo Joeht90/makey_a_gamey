@@ -25,9 +25,13 @@ def main():
             continue
         if 'open' in command:
             chest = command.split()
-            print(location.inventory['chest'].is_locked)
-            if 'key' in player_1.inventory: #and location.inventory[chest[-1]].is_locked == True:
-                print("eh")
+            if 'key' in player_1.inventory and location.inventory[chest[-1]].is_locked == True:
+                location.inventory[chest[-1]].is_locked = False
+                player_1.remove_item('key')
+                print("You win!")
+                break
+            elif 'key' not in player_1.inventory and location.inventory[chest[-1]].is_locked == True:
+                print("You do not have a key in your inventory!")
             continue
         if 'take' in command:
             item = command.split()
