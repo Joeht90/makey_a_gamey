@@ -1,4 +1,4 @@
-from game_object import Scene, Item, Container
+from game_object import Scene, Item, Container, Enemy 
 from scene_connections import SceneConn
 
 # Create all the scenes you need for your game here
@@ -19,6 +19,9 @@ key = Item('key', 'key for opening chests and doors')
 
 # Add containers to game
 chest_1 = Container("chest", "A Locked Chest", True)
+
+# Add enemies here
+goblin = Enemy("Goblin", "An enemy holding a key", 100, 20)
 
 # Add items, containers, and inventories to starting locations
 room_2.add_item(key.name, key)
