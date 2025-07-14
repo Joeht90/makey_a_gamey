@@ -23,7 +23,11 @@ chest_1 = Container("chest", "A Locked Chest", True)
 # Add enemies here
 goblin = Enemy("Goblin", "An enemy holding a key", 100, 20)
 
-# Add items, containers, and inventories to starting locations
-room_2.add_item(key.name, key)
+# Add items to Enemy inventories here
+goblin.add_item(key.name, key)
+
+# Add items, containers, and enemies to starting locations
 room_3.add_item(chest_1.name, chest_1)
+room_2.add_item(goblin.name, goblin)
+goblin.add_item(key, key)
 

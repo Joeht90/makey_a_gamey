@@ -29,7 +29,7 @@ class Player(GameObject):
 
 
 class Enemy(GameObject):
-    def __init__(self, name, description, health, strength)
+    def __init__(self, name, description, health, strength, inventory={})
         super().__init__(name, description)
         self.health = health
         self.strength = strength
